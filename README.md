@@ -13,6 +13,7 @@ While creating a roster for nurse allocation following things are to be consider
 These are some of the things which are to be considered while designing a roster. These rosters are prepared by admin nurses which take up considerable amount of their time which can otherwise be utilized in taking care of patients.
 
 **User Interface:**
+
 The table shows different preferences for patients. Following are the different columns:
 * Bed: It indicates different patients admitted into the hospital.
 * Required skills: Skills that are required to take care of the patients
