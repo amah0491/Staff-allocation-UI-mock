@@ -18,10 +18,10 @@ The table shows different preferences for patients. Following are the different 
 * Required skills: Skills that are required to take care of the patients
 * Previous assignment: Nurse previously assigned to the patient
 * Preferences: Nurse preferences ordered from best to worst. Following is the order from bes to worst for preference:
-- (green-background with blue font): Full match of skillset that the nurse possess and the one required by patient
-- (green-background) : Full match of skillset that the nurse possess and the one required by patient
-- (yellow-background): Partial match of skillset that the nurse possess and the one required by patient
-- (red-background): No match of skillset that the nurse possess and the one required by patient
+a) (green-background with blue font): Full match of skillset that the nurse possess and the one required by patient
+b) (green-background) : Full match of skillset that the nurse possess and the one required by patient
+c) (yellow-background): Partial match of skillset that the nurse possess and the one required by patient
+d) (red-background): No match of skillset that the nurse possess and the one required by patient
 Once an assignment is made for a preference then that nurse will not appear in the preferences elsewhere.
 
 
