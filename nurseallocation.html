@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <!--Plugins for context menu -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+<link rel="stylesheet" href="allocation.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+  <title>Nurse Allocation</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="navbar-header" id="mobileshow">
+      
+      <!-- Button data-target element sets effects on the main-nav id list -->
+      <button class="nav-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+      </button>
+    </div>
+
+   <div class="no-print" id="nav-top">
+    <ul id="main-nav">
+      <li><a href="#">Nurse Allocation</a></li>
+    </ul>
+  </div>
+  
+    <div class="no-print" id="submenu">
+    <ul id="submenu-nav">
+        <li><a href="javascript:doClick(&quot;previous 4 weeks&quot;)" title="Show the previous 4 weeks"><i class="fas fa-chevron-left"></i></a></li>
+        <li><a href="javascript:doClick(&quot;next 4 weeks&quot;)" title="Show the next 4 weeks"><i class="fas fa-chevron-right"></i></a></li>
+        <li><a href="javascript:doClick(&quot;last date published&quot;)" title="Show the last date published "><i class="fas fa-step-forward"></i></a></li>
+        <li><a href="javascript:doClick(&quot;show today&quot;)" title="Show today"><i class="fas fa-star"></i></a></li>
+        <li><a href="javascript:window.print()" title="Print screen"><i class="fas fa-print"></i></a></li>
+        <li><a href="javascript:filterDialog()" id="filter" title="Filter"><i class="fas fa-filter"></i></a></li>
+        
+    </ul>    
+    </div>
+    
+    <table id="myTable">
+    <thead>
+    <tr>
+       <th class="opt-staff-sticky-col">Bed</th>
+       <th class="staff-skills">Required<br>Skills</th>
+       <th class="prev-assign">Previous<br>Assignment</th>
+       <th v-for="day in dataset.days">{{formatDate(day)}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="(bed,bedIndex) in dataset.beds">
+       <td class="opt-staff-sticky-col"> 
+         <span class="staff-name" v-html="makeRosterId(bed.id)"></span>
+       </td>
+       <td class="opt-staff-sticky-col"> 
+         <span class="prev-assign" v-html="makeSkills(bed)"></span>
+       </td>
+       <td class="opt-staff-sticky-col"> 
+         <span class="staff-skills" v-html="makePrev(bed)"></span>
+       </td>
+       <td style="text-align: center"
+           class="rosterCell"
+           v-bind:data-bedIndex="bedIndex"
+           >
+         <span v-html="makeRosterCell(bed)"></span>
+       </td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+
+  <script src="allocation.js"></script>
+</body>
+</html>
