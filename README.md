@@ -18,7 +18,7 @@ The table shows different preferences for patients. Following are the different 
 * Bed: It indicates different patients admitted into the hospital.
 * Required skills: Skills that are required to take care of the patients
 * Previous assignment: Nurse previously assigned to the patient
-* Preferences: Nurse preferences ordered from best to worst. Following is the order from bes to worst for preference:
+* Preferences: Nurse preferences ordered from best to worst. Following is the order from best to worst for preference:
 1. (green-background with blue font): Full match of skillset that the nurse possess and the one required by patient
 2. (green-background) : Full match of skillset that the nurse possess and the one required by patient
 3. (yellow-background): Partial match of skillset that the nurse possess and the one required by patient
