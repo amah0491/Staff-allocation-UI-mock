@@ -23,6 +23,7 @@ The table shows different preferences for patients. Following are the different 
 2. (green-background) : Full match of skillset that the nurse possess and the one required by patient
 3. (yellow-background): Partial match of skillset that the nurse possess and the one required by patient
 4. (red-background): No match of skillset that the nurse possess and the one required by patient
+
 Once an assignment is made for a preference then that nurse will not appear in the preferences elsewhere.
 
 
